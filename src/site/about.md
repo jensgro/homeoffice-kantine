@@ -1,6 +1,7 @@
 ---
 title: Was soll das hier?
 layout: layouts/base.njk
+nav: about
 ---
 
 In der aktuellen Situation sind alle, denen es beruflich möglich ist, auf Homeoffice angewiesen. Hin und wieder lese ich auf Twitter, dass dort die Kantine so schlecht sei. Dem gilt es Abhilfe zu schaffen. Ich sammele [in einem Dokument](https://docs.google.com/document/d/1mwB8c1QlyyUqDCTcn9XJN40UPImn0CnPtqCK8ubxXwI/edit?usp=sharing) möglichst einfache Rezepte sammeln, die man schnell zubereiten kann. Bitte beteilige Dich mit Ergänzungen [dieses Dokuments](https://docs.google.com/document/d/1mwB8c1QlyyUqDCTcn9XJN40UPImn0CnPtqCK8ubxXwI/edit?usp=sharing)!

@@ -3,15 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-::-moz-selection {
-  background-color: $text-color;
-  color: $page-color;
-}
-::selection {
-  background-color: $text-color;
-  color: $page-color;
+  box-sizing: border-box;
 }
 
 html {
@@ -40,7 +32,7 @@ body {
   };
 }
 
-
+/* ==== Allgemeine Textformatierungen === */
 h1, h2, h3 {
   color: $text-color;
   font-weight: 600;
@@ -48,6 +40,34 @@ h1, h2, h3 {
   margin-bottom:0.2em;
   line-height: 1;
 }
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.5;
+
+  a {
+    color: $myred;
+  }
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+}
+
+ul, ol {
+  padding-left: 1em;
+}
+
+/* ==== Der Header der Seite === */
+.site__header {
+  margin-bottom: 60px;
+}
+.subtitle {
+  font-size: 1.75em;
+  color: $subtitle-color;
+  margin: 0;
+}
+
 h1 {
   font-size: 2.5em;
   margin-top:0.4em;
@@ -61,39 +81,14 @@ h1 {
   @media (min-width: $wide) {
     font-size: 4em;
   };
+
+  background-color: $h1-bgcolor;
+  padding: 0.5em;
+  border-left: 10px solid $h1-bordercolor;
 }
 
-p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 
-.subtitle {
-  font-size: 1.2em;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  color: $subtitle-color;
-}
-
-ul, ol {
-  padding-left: 1em;
-}
-/*
-a:link,
-a:visited {
-  color: $text-color;
-  text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: mix($text-color, $accent-color, 20%)
-}
-a:hover,
-a:focus {
-  color: $text-color;
-  border-bottom-color: $text-color;
-}
-*/
-
+/* ==== Die Navigation === */
 .nav {
   padding-top: 3em;
 
@@ -129,38 +124,66 @@ a:focus {
     font-size: 0.7em;
     color: mix($text-color,$accent-color, 60%);
   }
+
+  a.active {
+    border-top-color: $myred;
+    border-top-width: calc(0.2em + 1px);
+    padding-top: 0.6em;
+  }
 }
 
 
 
+/* ==== Hauptinhalt === */
 main {
   margin-top: 4em;
 }
 
-
-footer {
-  margin-top: 6em;
-  padding-top: 4em;
-  padding-bottom: 6em;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: mix($text-color, $accent-color, 10%);
-  font-size: 0.7em;
-  color: mix($text-color, $accent-color, 50%);
-
-  a:link,
-  a:visited {
-    color: mix($text-color, $accent-color, 90%);
-    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
-  }
-
-  a:hover,
-  a:focus {
-    color: $text-color;
-    border-bottom: solid 1px $text-color;
-  }
+/* ==== Grid auf der Startseite === */
+.index-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
 }
 
+/* ==== Button === */
+.btn-cnt {
+  text-align: center;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  background-color: #666;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.25rem;
+}
+
+.btn--warning {
+  background-color: #B71C1C;
+}
+
+/* ==== CARD === */
+.card {
+  background-color: #fafafa;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.card__header {
+  background-color: #0277BD;
+  padding: 10px 25px;
+}
+.card__headline {
+  margin-top: 0;
+  color: #fff;
+}
+.card__body {
+  padding: 0 10px;
+}
+
+/* ==== Listing === */
 
 .listing {
   margin: 10px 0;
@@ -181,41 +204,45 @@ footer {
   }
 }
 
-.index-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+/* ==== Footer der Seite === */
+.site__footer {
+  margin-top: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 6em;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: mix($text-color, $accent-color, 10%);
+  color: mix($text-color, $accent-color, 50%);
+  line-height: 1.5;
+  
+  a:link,
+  a:visited {
+    color: mix($text-color, $accent-color, 90%);
+    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
+  }
+
+  a:hover,
+  a:focus {
+    color: $text-color;
+    border-bottom: solid 1px $text-color;
+  }
 }
 
-.btn-cnt {
-  text-align: center;
-}
+/* === Impressum === */
 
-.btn {
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px;
-  background-color: #666;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 1.25rem;
-}
+.adresslist {
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    display: inline-block;
+  }
 
-.btn--warning {
-  background-color: #B71C1C;
-}
-
-.card {
-  background-color: #fafafa;
-}
-.card__header {
-  background-color: #0277BD;
-  padding: 6px;
-}
-.card__headline {
-  margin-top: 0;
-  color: #fff;
-}
-.card__body {
-  padding: 0 10px;
+  li:after {
+    content: ", ";
+    display: inline-block;
+    margin-right: 4px;
+  }
 }

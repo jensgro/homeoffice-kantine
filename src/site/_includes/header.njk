@@ -1,10 +1,16 @@
-<header>
+<header class="site__header">
   <ul class="nav">
     <li>
-      <a href="/">Startseite<small>Rezeptübersicht</small></a>
+      <a href="/"{% if nav == "index" %} class="active"{% endif %}>Startseite<small>Rezeptübersicht</small></a>
     </li>
     <li>
-      <a href="/about">über das Projekt<small>Was soll das alles hier?</small></a>
+      <a href="/about"{% if nav == "about" %} class="active"{% endif %}>über das Projekt<small>Was soll das alles hier?</small></a>
+    </li>
+    <li>
+      <a href="/impressum"{% if nav == "impressum" %} class="active"{% endif %}>Impressum<small>Das muss sein!</small></a>
+    </li>
+    <li>
+      <a href="https://grochtdreis.de/flocke">Mein Kochblog<small>Flocke Online</small></a>
     </li>
   </ul>
   <h1>{{ title }}</h1>

@@ -8,5 +8,10 @@ $page-color: #CFD8DC;
 $text-color: #222;
 $accent-color: #27a4de;
 $dark-color: #000;
-$h1-color: $dark-color;
-$subtitle-color: #a20000;
+$myred: #a20000;
+$orange1: #ffcc80;
+$h1-color: #eee;
+$h1-bgcolor: #90A4AE;
+$h1-bordercolor: $orange1;
+$subtitle-color: $text-color;
+
