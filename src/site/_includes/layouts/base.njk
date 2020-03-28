@@ -11,14 +11,26 @@
     <div class="container">
       {% include "header.njk" %}
       {{ content | safe }}
+
+    {% if rec %}
+      <div class="card recommendations-cnt">
+        <div class="card__header">
+          <h2 class="card__headline">Rezeptlinks</h2>
+        </div>
+        <div class="card__body">
+          <ul class="listing recommendations">
+            {%- for page in rec -%}
+            <li>
+              <a href="{{ page.url }}">{{ page.title }}</a> <span>{{page.note}}</span>
+            </li>
+        {%- endfor -%}
+          </ul>
+        </div>
+        
+      </div>
+      {% endif %}
       {% include "footer.njk" %}
     </div>
-
-    {% set js %}
-      {% include "js/core.js" %}
-      {% include "js/hello.js" %}
-    {% endset %}
-    <script>{{ js | jsmin | safe }}</script>
 
   </body>
 </html>

@@ -72,8 +72,21 @@ h1 {
   font-size: 2.5em;
   margin-top:0.4em;
   margin-bottom:0.2em;
+  padding: 0.5em 0.5em 0.5em 0;
   line-height: 1;
   color: $h1-color;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    background-color: $h1-bordercolor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5em;
+    height: 0.15em;
+  }
 
   @media (min-width: $mid) {
     font-size: 3.5em;
@@ -81,16 +94,13 @@ h1 {
   @media (min-width: $wide) {
     font-size: 4em;
   };
-
-  background-color: $h1-bgcolor;
-  padding: 0.5em;
-  border-left: 10px solid $h1-bordercolor;
 }
 
 
 /* ==== Die Navigation === */
 .nav {
   padding-top: 3em;
+  padding-left: 0;
 
   li {
     display: inline;
@@ -140,11 +150,18 @@ main {
 }
 
 /* ==== Grid auf der Startseite === */
-.index-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
-}
+
+@media (min-width: $mid) {
+  .index-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }    
+
+  .card {
+    margin-bottom: 0;
+  }
+};
 
 /* ==== Button === */
 .btn-cnt {
@@ -170,6 +187,7 @@ main {
   background-color: #fafafa;
   border-radius: 6px;
   overflow: hidden;
+  margin-bottom: 40px;
 }
 .card__header {
   background-color: #0277BD;
@@ -180,7 +198,7 @@ main {
   color: #fff;
 }
 .card__body {
-  padding: 0 10px;
+  padding: 10px 10px 20px 25px;
 }
 
 /* ==== Listing === */
@@ -245,4 +263,10 @@ main {
     display: inline-block;
     margin-right: 4px;
   }
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background-color: $h1-bgcolor;
 }
