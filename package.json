@@ -23,7 +23,7 @@
     "dotenv": "^10.0.0",
     "html-minifier": "^4.0.0",
     "luxon": "^2.5.2",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.31",
     "postcss-color-mix": "^1.1.0",
     "postcss-comment": "^2.0.0",
     "postcss-import": "^14.0.2",
